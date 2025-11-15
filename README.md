@@ -13,8 +13,8 @@ python3 hunt.py --hunt powershell --input powershell_4104.jsonl
 # Modbus anomaly hunt
 python3 hunt.py --hunt ics_modbus --input modbus.log
 
-#Network only lateral - 1st step
+# Network only lateral - 1st step
 python3 hunt.py --hunt lateral --input /path/to/conn.log --output lateral.jsonl
 
-#Network and host lateral - 2nd step
+# Network and host lateral - 2nd step
 python3 hunt.py --hunt lateral --input /path/to/file --output lateral.jsonl
