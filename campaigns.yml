@@ -1,0 +1,34 @@
+campaigns:
+  network_initial_access:
+    desc: Baseline network-focused hunt (beaconing, DNS, TLS, HTTP, portscan).
+    items:
+    - hunt: beaconing
+      input: conn.log
+    - hunt: portscan
+      input: conn.log
+    - hunt: dns_tunnel
+      input: dns.log
+    - hunt: dns_dga
+      input: dns.log
+    - hunt: tls_anomaly
+      input: ssl.log
+    - hunt: http_exec_downloads
+      input: http.log
+  auth_surface:
+    desc: Authentication-focused hunt (SSH/NTLM/RDP brute force + successful logins).
+    items:
+    - hunt: ssh_bruteforce
+      input: ssh.log
+    - hunt: ntlm_bruteforce
+      input: ntlm.log
+    - hunt: rdp_bruteforce
+      input: rdp.log
+    - hunt: auth_success
+      input: ssh.log
+  ics_focus:
+    desc: ICS / lateral focus (Modbus anomalies + network lateral movement).
+    items:
+    - hunt: ics_modbus
+      input: modbus.log
+    - hunt: lateral
+      input: conn.log
