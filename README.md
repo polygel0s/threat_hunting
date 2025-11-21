@@ -1,5 +1,5 @@
 # threat_hunting
-threat hunting tool to run against zeek logs
+threat hunting tool to run against zeek logs -> it works well with Malcolm
 
 # Beaconing from Zeek conn.log
 python hunt.py --hunt beaconing --input conn.log --output beaconing.jsonl
